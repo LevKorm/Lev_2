@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 AI Tools for Personal Efficiency and Profit Growth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background gradient effects */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-gradient::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 20% 20%, rgba(88, 28, 135, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 80%, rgba(88, 28, 135, 0.1) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 14px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(to bottom, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: #a0a0a0;
+            margin-bottom: 32px;
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #c0c0c0;
+        }
+
+        .feature svg {
+            width: 18px;
+            height: 18px;
+            color: #a855f7;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 18px 36px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.4);
+        }
+
+        .cta-button svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Timer Section */
+        .timer-section {
+            margin: 60px auto;
+            max-width: 700px;
+            background: linear-gradient(135deg, rgba(30, 30, 50, 0.8) 0%, rgba(20, 20, 35, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+        }
+
+        .timer-section .label {
+            font-size: 14px;
+            color: #a0a0a0;
+            margin-bottom: 16px;
+        }
+
+        .timer-section .offer-text {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .timer-section .offer-text .highlight {
+            color: #4ade80;
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timer-icon {
+            color: #6b7280;
+            margin-right: 8px;
+        }
+
+        .timer-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .timer-block {
+            text-align: center;
+        }
+
+        .timer-value {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 28px;
+            font-weight: 700;
+            min-width: 60px;
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 11px;
+            color: #6b7280;
+            text-transform: capitalize;
+            margin-top: 8px;
+        }
+
+        .timer-separator {
+            font-size: 28px;
+            font-weight: 700;
+            color: #6b7280;
+            padding: 0 4px;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            text-align: center;
+            padding: 60px 0 100px;
+        }
+
+        .tools-section h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .tools-section .description {
+            font-size: 16px;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .tools-section .description .highlight {
+            color: #4ade80;
+        }
+
+        /* Chat bubble */
+        .chat-bubble {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            color: #333;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .chat-bubble .check {
+            width: 20px;
+            height: 20px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-bubble .check svg {
+            width: 12px;
+            height: 12px;
+            color: white;
+        }
+
+        .chat-bubble .actions {
+            display: flex;
+            gap: 8px;
+            margin-left: 16px;
+            color: #9ca3af;
+        }
+
+        .chat-bubble .actions svg {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .timer-section {
+                margin: 40px 20px;
+                padding: 30px 20px;
+            }
+
+            .timer-value {
+                font-size: 22px;
+                padding: 10px 12px;
+                min-width: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#a855f7" stroke="#a855f7"/>
+                </svg>
+                AI-Powered Business Workshop
+            </div>
+
+            <h1>7 AI tools for personal<br>efficiency and profit growth</h1>
+
+            <p class="subtitle">How to earn more while working less</p>
+
+            <div class="features">
+                <div class="feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#a855f7" stroke="#a855f7"/>
+                    </svg>
+                    Even if you've never used AI
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#a855f7" stroke="#a855f7"/>
+                    </svg>
+                    No technical complexity or coding
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" stroke="#a855f7"/>
+                        <polyline points="14 2 14 8 20 8" stroke="#a855f7"/>
+                    </svg>
+                    Real business case studies
+                </div>
+            </div>
+
+            <a href="#register" class="cta-button">
+                REGISTER FOR THE WORKSHOP
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </section>
+
+        <!-- Timer Section -->
+        <section class="timer-section">
+            <p class="label">Register before the timer ends and get the video:</p>
+            <p class="offer-text">
+                How to become <span class="highlight">40% faster and more efficient</span> with AI, delegate routine tasks, and increase sales
+            </p>
+
+            <div class="timer-container">
+                <div class="timer-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <div class="timer-block">
+                    <span class="timer-value" id="hours">00</span>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-block">
+                    <span class="timer-value" id="minutes">00</span>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-block">
+                    <span class="timer-value" id="seconds">00</span>
+                    <div class="timer-label">Seconds</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section class="tools-section">
+            <h2>Which 7 tools will we cover in the workshop?</h2>
+            <p class="description">
+                In a live session, we'll walk through real examples of how <span class="highlight">you personally</span> can use these 7 tools — for personal productivity and for business: from sales and marketing to finance and management.
+            </p>
+
+            <div class="chat-bubble">
+                <div class="check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                Done! How does this look?
+                <div class="actions">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path>
+                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Countdown Timer
+        function startCountdown() {
+            // Set timer for 24 hours from now (or adjust as needed)
+            let totalSeconds = 24 * 60 * 60; // 24 hours
+
+            // Check if there's a saved end time in localStorage
+            const savedEndTime = localStorage.getItem('countdownEndTime');
+            if (savedEndTime) {
+                const remaining = Math.floor((parseInt(savedEndTime) - Date.now()) / 1000);
+                if (remaining > 0) {
+                    totalSeconds = remaining;
+                } else {
+                    // Reset timer if expired
+                    localStorage.setItem('countdownEndTime', Date.now() + (24 * 60 * 60 * 1000));
+                }
+            } else {
+                localStorage.setItem('countdownEndTime', Date.now() + (totalSeconds * 1000));
+            }
+
+            function updateTimer() {
+                const endTime = parseInt(localStorage.getItem('countdownEndTime'));
+                const remaining = Math.floor((endTime - Date.now()) / 1000);
+
+                if (remaining <= 0) {
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const hours = Math.floor(remaining / 3600);
+                const minutes = Math.floor((remaining % 3600) / 60);
+                const seconds = remaining % 60;
+
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Start the countdown when page loads
+        document.addEventListener('DOMContentLoaded', startCountdown);
+    </script>
+</body>
+</html>
