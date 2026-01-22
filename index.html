@@ -16,10 +16,44 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0f;
+            background: #050a15;
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
+        }
+
+        /* Header with background image */
+        .header {
+            position: relative;
+            width: 100%;
+            min-height: 600px;
+            background: url('header-bg.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 60px;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom,
+                rgba(5, 10, 21, 0) 0%,
+                rgba(5, 10, 21, 0.3) 50%,
+                rgba(5, 10, 21, 0.95) 100%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 20px;
         }
 
         /* Background gradient effects */
@@ -40,9 +74,9 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(ellipse at 20% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-                        radial-gradient(ellipse at 50% 80%, rgba(234, 88, 12, 0.1) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 20% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
         }
 
         .container {
@@ -63,12 +97,12 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid rgba(6, 182, 212, 0.3);
             border-radius: 50px;
             padding: 8px 20px;
             font-size: 14px;
-            color: #e0e0e0;
+            color: #67e8f9;
             margin-bottom: 40px;
             backdrop-filter: blur(10px);
         }
@@ -83,7 +117,7 @@
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 24px;
-            background: linear-gradient(to bottom, #ffffff 0%, #a0a0a0 100%);
+            background: linear-gradient(to bottom, #ffffff 0%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -91,7 +125,7 @@
 
         .hero .subtitle {
             font-size: 18px;
-            color: #a0a0a0;
+            color: #94a3b8;
             margin-bottom: 32px;
         }
 
@@ -109,13 +143,13 @@
             align-items: center;
             gap: 8px;
             font-size: 14px;
-            color: #c0c0c0;
+            color: #cbd5e1;
         }
 
         .feature svg {
             width: 18px;
             height: 18px;
-            color: #f97316;
+            color: #06b6d4;
         }
 
         /* CTA Button */
@@ -123,7 +157,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
             color: #ffffff;
             font-size: 14px;
             font-weight: 600;
@@ -139,85 +173,12 @@
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(249, 115, 22, 0.4);
+            box-shadow: 0 10px 40px rgba(6, 182, 212, 0.4);
         }
 
         .cta-button svg {
             width: 18px;
             height: 18px;
-        }
-
-        /* Timer Section */
-        .timer-section {
-            margin: 60px auto;
-            max-width: 700px;
-            background: linear-gradient(135deg, rgba(45, 30, 20, 0.8) 0%, rgba(30, 20, 15, 0.9) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            backdrop-filter: blur(20px);
-        }
-
-        .timer-section .label {
-            font-size: 14px;
-            color: #a0a0a0;
-            margin-bottom: 16px;
-        }
-
-        .timer-section .offer-text {
-            font-size: 16px;
-            color: #ffffff;
-            margin-bottom: 30px;
-        }
-
-        .timer-section .offer-text .highlight {
-            color: #fbbf24;
-        }
-
-        .timer-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .timer-icon {
-            color: #6b7280;
-            margin-right: 8px;
-        }
-
-        .timer-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .timer-block {
-            text-align: center;
-        }
-
-        .timer-value {
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 8px;
-            padding: 12px 16px;
-            font-size: 28px;
-            font-weight: 700;
-            min-width: 60px;
-            display: block;
-        }
-
-        .timer-label {
-            font-size: 11px;
-            color: #6b7280;
-            text-transform: capitalize;
-            margin-top: 8px;
-        }
-
-        .timer-separator {
-            font-size: 28px;
-            font-weight: 700;
-            color: #6b7280;
-            padding: 0 4px;
         }
 
         /* Tools Section */
@@ -234,14 +195,14 @@
 
         .tools-section .description {
             font-size: 16px;
-            color: #a0a0a0;
+            color: #94a3b8;
             max-width: 700px;
             margin: 0 auto 40px;
             line-height: 1.6;
         }
 
         .tools-section .description .highlight {
-            color: #fbbf24;
+            color: #22d3ee;
         }
 
         /* Chat bubble */
@@ -259,7 +220,7 @@
         .chat-bubble .check {
             width: 20px;
             height: 20px;
-            background: #f59e0b;
+            background: #06b6d4;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -287,6 +248,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .header {
+                min-height: 400px;
+                padding-bottom: 40px;
+            }
+
             .hero {
                 padding: 60px 0 40px;
             }
@@ -296,29 +262,16 @@
                 align-items: center;
                 gap: 16px;
             }
-
-            .timer-section {
-                margin: 40px 20px;
-                padding: 30px 20px;
-            }
-
-            .timer-value {
-                font-size: 22px;
-                padding: 10px 12px;
-                min-width: 50px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="bg-gradient"></div>
-
-    <main class="container">
-        <!-- Hero Section -->
-        <section class="hero">
+    <!-- Header with background image -->
+    <header class="header">
+        <div class="header-content">
             <div class="badge">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#f97316" stroke="#f97316"/>
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#06b6d4" stroke="#06b6d4"/>
                 </svg>
                 Воркшоп з AI для бізнесу
             </div>
@@ -330,20 +283,20 @@
             <div class="features">
                 <div class="feature">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#f97316" stroke="#f97316"/>
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#06b6d4" stroke="#06b6d4"/>
                     </svg>
                     Навіть якщо ви ніколи не користувалися AI
                 </div>
                 <div class="feature">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#f97316" stroke="#f97316"/>
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#06b6d4" stroke="#06b6d4"/>
                     </svg>
                     Без технічної складності чи коду
                 </div>
                 <div class="feature">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" stroke="#f97316"/>
-                        <polyline points="14 2 14 8 20 8" stroke="#f97316"/>
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" stroke="#06b6d4"/>
+                        <polyline points="14 2 14 8 20 8" stroke="#06b6d4"/>
                     </svg>
                     Реальні бізнес-кейси
                 </div>
@@ -356,39 +309,12 @@
                     <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
             </a>
-        </section>
+        </div>
+    </header>
 
-        <!-- Timer Section -->
-        <section class="timer-section">
-            <p class="label">Зареєструйтеся до закінчення таймера та отримайте відео:</p>
-            <p class="offer-text">
-                Як стати на <span class="highlight">40% швидшим та ефективнішим</span> з AI, делегувати рутинні завдання та збільшити продажі
-            </p>
+    <div class="bg-gradient"></div>
 
-            <div class="timer-container">
-                <div class="timer-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                </div>
-                <div class="timer-block">
-                    <span class="timer-value" id="hours">00</span>
-                    <div class="timer-label">Годин</div>
-                </div>
-                <span class="timer-separator">:</span>
-                <div class="timer-block">
-                    <span class="timer-value" id="minutes">00</span>
-                    <div class="timer-label">Хвилин</div>
-                </div>
-                <span class="timer-separator">:</span>
-                <div class="timer-block">
-                    <span class="timer-value" id="seconds">00</span>
-                    <div class="timer-label">Секунд</div>
-                </div>
-            </div>
-        </section>
-
+    <main class="container">
         <!-- Tools Section -->
         <section class="tools-section">
             <h2>Які 7 інструментів ми розглянемо на воркшопі?</h2>
@@ -418,53 +344,5 @@
             </div>
         </section>
     </main>
-
-    <script>
-        // Countdown Timer
-        function startCountdown() {
-            // Set timer for 24 hours from now (or adjust as needed)
-            let totalSeconds = 24 * 60 * 60; // 24 hours
-
-            // Check if there's a saved end time in localStorage
-            const savedEndTime = localStorage.getItem('countdownEndTime');
-            if (savedEndTime) {
-                const remaining = Math.floor((parseInt(savedEndTime) - Date.now()) / 1000);
-                if (remaining > 0) {
-                    totalSeconds = remaining;
-                } else {
-                    // Reset timer if expired
-                    localStorage.setItem('countdownEndTime', Date.now() + (24 * 60 * 60 * 1000));
-                }
-            } else {
-                localStorage.setItem('countdownEndTime', Date.now() + (totalSeconds * 1000));
-            }
-
-            function updateTimer() {
-                const endTime = parseInt(localStorage.getItem('countdownEndTime'));
-                const remaining = Math.floor((endTime - Date.now()) / 1000);
-
-                if (remaining <= 0) {
-                    document.getElementById('hours').textContent = '00';
-                    document.getElementById('minutes').textContent = '00';
-                    document.getElementById('seconds').textContent = '00';
-                    return;
-                }
-
-                const hours = Math.floor(remaining / 3600);
-                const minutes = Math.floor((remaining % 3600) / 60);
-                const seconds = remaining % 60;
-
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            }
-
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        }
-
-        // Start the countdown when page loads
-        document.addEventListener('DOMContentLoaded', startCountdown);
-    </script>
 </body>
 </html>
