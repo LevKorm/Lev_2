@@ -6,7 +6,7 @@
     <title>7 AI-інструментів для особистої ефективності та зростання прибутку</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,16 +22,23 @@
             overflow-x: hidden;
         }
 
-        /* Header with background image */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
         .header {
             position: relative;
             width: 100%;
-            min-height: 600px;
-            background: url('header-bg 1.png') center center / cover no-repeat;
+            min-height: 700px;
+            background: url('header-bg 1.png') center top / cover no-repeat;
             display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 60px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 40px;
         }
 
         .header::before {
@@ -43,7 +50,7 @@
             bottom: 0;
             background: linear-gradient(to bottom,
                 rgba(5, 10, 21, 0) 0%,
-                rgba(5, 10, 21, 0.3) 50%,
+                rgba(5, 10, 21, 0.2) 40%,
                 rgba(5, 10, 21, 0.95) 100%);
             pointer-events: none;
         }
@@ -56,43 +63,6 @@
             padding: 0 20px;
         }
 
-        /* Background gradient effects */
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .bg-gradient::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 20% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 50% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 80px 0 60px;
-        }
-
         .badge {
             display: inline-flex;
             align-items: center;
@@ -103,7 +73,7 @@
             padding: 8px 20px;
             font-size: 14px;
             color: #67e8f9;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             backdrop-filter: blur(10px);
         }
 
@@ -112,21 +82,25 @@
             height: 16px;
         }
 
-        .hero h1 {
-            font-size: clamp(32px, 5vw, 56px);
+        h1 {
+            font-size: clamp(32px, 5vw, 52px);
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 24px;
-            background: linear-gradient(to bottom, #ffffff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 20px;
         }
 
-        .hero .subtitle {
+        h1 .highlight {
+            color: #22d3ee;
+        }
+
+        .subtitle {
             font-size: 18px;
             color: #94a3b8;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+        }
+
+        .subtitle .highlight {
+            color: #fbbf24;
         }
 
         /* Features */
@@ -134,8 +108,8 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 32px;
-            margin-bottom: 40px;
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
         .feature {
@@ -163,7 +137,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 18px 36px;
+            padding: 16px 32px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -181,104 +155,438 @@
             height: 18px;
         }
 
-        /* Tools Section */
-        .tools-section {
+        /* Timer Section */
+        .timer-section {
+            margin: -60px auto 80px;
+            max-width: 750px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(10, 15, 30, 0.95) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 16px;
+            padding: 40px;
             text-align: center;
-            padding: 60px 0 100px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            z-index: 2;
         }
 
-        .tools-section h2 {
-            font-size: clamp(28px, 4vw, 42px);
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-
-        .tools-section .description {
-            font-size: 16px;
+        .timer-section .label {
+            font-size: 14px;
             color: #94a3b8;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
+            margin-bottom: 16px;
         }
 
-        .tools-section .description .highlight {
+        .timer-section .offer-text {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .timer-section .offer-text .highlight {
             color: #22d3ee;
         }
 
-        /* Chat bubble */
-        .chat-bubble {
-            display: inline-flex;
+        .timer-container {
+            display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
-            background: #ffffff;
-            color: #333;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 14px;
+            gap: 12px;
         }
 
-        .chat-bubble .check {
-            width: 20px;
-            height: 20px;
-            background: #06b6d4;
+        .timer-icon {
+            color: #6b7280;
+            margin-right: 8px;
+        }
+
+        .timer-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .timer-block {
+            text-align: center;
+        }
+
+        .timer-value {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 32px;
+            font-weight: 700;
+            min-width: 70px;
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        .timer-separator {
+            font-size: 32px;
+            font-weight: 700;
+            color: #6b7280;
+            padding: 0 4px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 12px;
+            color: #67e8f9;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .section-title .highlight {
+            color: #22d3ee;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        /* Tools Grid */
+        .tools-section {
+            text-align: center;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 30, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: rgba(6, 182, 212, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .tool-card.featured {
+            grid-column: span 2;
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(6, 182, 212, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .tool-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .tool-card p {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Results Section */
+        .results-section {
+            background: linear-gradient(180deg, rgba(6, 182, 212, 0.05) 0%, transparent 100%);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 30, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .result-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(6, 182, 212, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .result-icon svg {
+            width: 22px;
+            height: 22px;
+            color: #22d3ee;
+        }
+
+        .result-content h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .result-content p {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Team Section */
+        .team-section {
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .team-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 30, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
             border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .team-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .team-card .role {
+            font-size: 13px;
+            color: #22d3ee;
+            margin-bottom: 12px;
+        }
+
+        .team-card p {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .stats-section .big-text {
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            line-height: 1.4;
+            max-width: 900px;
+            margin: 0 auto 20px;
+        }
+
+        .stats-section .big-text .highlight {
+            color: #22d3ee;
+        }
+
+        .stats-section .description {
+            font-size: 15px;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 48px;
+            font-weight: 800;
+            color: #22d3ee;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Bottom Icons */
+        .bottom-icons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .bottom-icon-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 15, 30, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .bottom-icon-card .icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            border-radius: 16px;
+            margin: 0 auto 16px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .chat-bubble .check svg {
-            width: 12px;
-            height: 12px;
+        .bottom-icon-card .icon svg {
+            width: 28px;
+            height: 28px;
             color: white;
         }
 
-        .chat-bubble .actions {
-            display: flex;
-            gap: 8px;
-            margin-left: 16px;
-            color: #9ca3af;
+        .bottom-icon-card p {
+            font-size: 14px;
+            color: #94a3b8;
         }
 
-        .chat-bubble .actions svg {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 30px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                min-height: 400px;
-                padding-bottom: 40px;
-            }
-
-            .hero {
-                padding: 60px 0 40px;
+                min-height: 500px;
             }
 
             .features {
                 flex-direction: column;
                 align-items: center;
-                gap: 16px;
+                gap: 12px;
+            }
+
+            .timer-section {
+                margin: -40px 20px 60px;
+                padding: 30px 20px;
+            }
+
+            .timer-value {
+                font-size: 24px;
+                padding: 10px 14px;
+                min-width: 55px;
+            }
+
+            .tools-grid,
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-card.featured {
+                grid-column: span 1;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .bottom-icons {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header with background image -->
+    <!-- Header Section -->
     <header class="header">
         <div class="header-content">
             <div class="badge">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#06b6d4" stroke="#06b6d4"/>
                 </svg>
-                Воркшоп з AI для бізнесу
+                AI-Powered Business Workshop
             </div>
 
-            <h1>7 AI-інструментів для<br>особистої ефективності та<br>зростання прибутку</h1>
+            <h1><span class="highlight">7 AI-інструментів</span> для<br>особистої ефективності<br>та зростання прибутку</h1>
 
-            <p class="subtitle">Як заробляти більше, працюючи менше</p>
+            <p class="subtitle">Як заробляти <span class="highlight">більше</span>, працюючи менше</p>
 
             <div class="features">
                 <div class="feature">
@@ -295,8 +603,7 @@
                 </div>
                 <div class="feature">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" stroke="#06b6d4"/>
-                        <polyline points="14 2 14 8 20 8" stroke="#06b6d4"/>
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#06b6d4" stroke="#06b6d4"/>
                     </svg>
                     Реальні бізнес-кейси
                 </div>
@@ -312,37 +619,303 @@
         </div>
     </header>
 
-    <div class="bg-gradient"></div>
+    <!-- Timer Section -->
+    <section class="timer-section">
+        <p class="label">Зареєструйтеся до закінчення таймера та отримайте відео:</p>
+        <p class="offer-text">
+            Як стати на <span class="highlight">40% швидшим та ефективнішим</span> з AI, делегувати рутинні завдання та збільшити продажі
+        </p>
+
+        <div class="timer-container">
+            <div class="timer-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+            <div class="timer-block">
+                <span class="timer-value" id="hours">23</span>
+                <div class="timer-label">Годин</div>
+            </div>
+            <span class="timer-separator">:</span>
+            <div class="timer-block">
+                <span class="timer-value" id="minutes">55</span>
+                <div class="timer-label">Хвилин</div>
+            </div>
+            <span class="timer-separator">:</span>
+            <div class="timer-block">
+                <span class="timer-value" id="seconds">08</span>
+                <div class="timer-label">Секунд</div>
+            </div>
+        </div>
+    </section>
 
     <main class="container">
         <!-- Tools Section -->
-        <section class="tools-section">
-            <h2>Які 7 інструментів ми розглянемо на воркшопі?</h2>
-            <p class="description">
-                На живому сеансі ми розглянемо реальні приклади того, як <span class="highlight">особисто ви</span> можете використовувати ці 7 інструментів — для особистої продуктивності та для бізнесу: від продажів і маркетингу до фінансів і управління.
+        <section class="section tools-section">
+            <div class="section-badge">ІНСТРУМЕНТИ</div>
+            <h2 class="section-title">Які <span class="highlight">7 інструментів</span> ми розглянемо?</h2>
+            <p class="section-subtitle">
+                На воркшопі ми розглянемо реальні приклади того, як ви можете використовувати ці 7 інструментів — для особистої продуктивності та бізнесу, від продажів і маркетингу до фінансів та управління.
             </p>
 
-            <div class="chat-bubble">
-                <div class="check">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">01</div>
+                    <h3>Cursor</h3>
+                    <p>AI-редактор коду нового покоління, який допомагає писати код швидше та ефективніше з підтримкою AI.</p>
                 </div>
-                Готово! Як вам?
-                <div class="actions">
+                <div class="tool-card">
+                    <div class="tool-icon">02</div>
+                    <h3>Claude</h3>
+                    <p>Потужний AI-асистент для аналізу документів, написання текстів та вирішення складних бізнес-задач.</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">03</div>
+                    <h3>Perplexity</h3>
+                    <p>AI-пошуковик нового покоління, який знаходить та узагальнює інформацію з усього інтернету.</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">04</div>
+                    <h3>UX Pilot & Lapa</h3>
+                    <p>Інструменти для швидкого прототипування та дизайну інтерфейсів за допомогою AI.</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">05</div>
+                    <h3>Grok & Gemini</h3>
+                    <p>AI-моделі для генерації контенту, аналізу даних та автоматизації бізнес-процесів.</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">06</div>
+                    <h3>Obsidian & Notion</h3>
+                    <p>Системи управління знаннями з AI-функціями для організації інформації та підвищення продуктивності.</p>
+                </div>
+                <div class="tool-card featured">
+                    <div class="tool-icon">07</div>
+                    <h3>AI-агенти для маркетингу та продажів</h3>
+                    <p>Покажемо як налаштувати AI-агентів, які автоматизують рутинні завдання з маркетингу та продажів, звільняючи ваш час для стратегічних задач.</p>
+                </div>
+            </div>
+
+            <a href="#register" class="cta-button">
+                ЗАРЕЄСТРУВАТИСЯ НА ВОРКШОП
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </section>
+
+        <!-- Results Section -->
+        <section class="section results-section">
+            <div style="text-align: center;">
+                <div class="section-badge">РЕЗУЛЬТАТИ</div>
+                <h2 class="section-title">Ваші результати після <span class="highlight">воркшопу</span></h2>
+                <p class="section-subtitle">
+                    Ви перестанете бачити AI як іграшку і почнете використовувати його як двигун прибутку.
+                </p>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="result-content">
+                        <h4>Зрозумієте, як системно впроваджувати AI</h4>
+                        <p>Та отримаєте чіткий план дій замість хаотичних експериментів.</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="result-content">
+                        <h4>Ви побачите, як автоматизувати</h4>
+                        <p>Рутинні бізнес-процеси та заощадити години щодня.</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <div class="result-content">
+                        <h4>Ви дізнаєтесь, як дійсно до 50% рутинної</h4>
+                        <p>Роботи AI може взяти на себе вже сьогодні.</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                    </div>
+                    <div class="result-content">
+                        <h4>Ви отримаєте доступ до готових</h4>
+                        <p>Промптів та шаблонів для швидкого старту.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#register" class="cta-button">
+                    ЗАРЕЄСТРУВАТИСЯ НА ВОРКШОП
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path>
-                    </svg>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="section team-section">
+            <div class="section-badge">ЕКСПЕРТИ</div>
+            <h2 class="section-title">Ваші провідники в <span class="highlight">майбутнє</span></h2>
+            <p class="section-subtitle">
+                Люди, які вже впроваджують ці технології у своїх бізнесах.
+            </p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h4>Влад Ясько</h4>
+                    <p class="role">ЗАСНОВНИК, ГЕНЕРАЛЬНИЙ ДИРЕКТОР</p>
+                    <p>Засновник та керівник продуктової студії "Пікселі". Експерт з AI для бізнесу. Має досвід впровадження AI в десятках компаній.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h4>Антон Присяжнюк</h4>
+                    <p class="role">CO-FOUNDER, ЕКСПЕРТ З AI-АВТОМАТИЗАЦІЇ</p>
+                    <p>Співзасновник AI-стартапу. Спеціалізується на автоматизації бізнес-процесів та інтеграції AI-інструментів.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h4>Костя Картошкін</h4>
+                    <p class="role">CO-FOUNDER, ЕКСПЕРТ З AI-МАРКЕТИНГУ</p>
+                    <p>Фахівець з AI-маркетингу та продажів. Допоміг десяткам компаній автоматизувати їх маркетингові процеси.</p>
+                </div>
+            </div>
+
+            <a href="#register" class="cta-button">
+                ЗАРЕЄСТРУВАТИСЯ НА ВОРКШОП
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="section-badge">ЦИФРИ</div>
+            <p class="big-text">
+                Світ змінився. Ми запустили кілька AI-стартапів — кожен лише за <span class="highlight">24 години</span> — і продали на <span class="highlight">$XXX</span> без жодного співробітника, використовуючи AI для всього.
+            </p>
+            <p class="description">
+                AI — це вже не тренд, це нова реальність. І якщо ви відчуваєте, що відстаєте — цей воркшоп для вас.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">години на запуск<br>AI-стартапу</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">$XXX</div>
+                    <div class="stat-label">продажів без<br>команди</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">найнятих<br>співробітників</div>
+                </div>
+            </div>
+
+            <div class="bottom-icons">
+                <div class="bottom-icon-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <p>Практичні демо наживо</p>
+                </div>
+                <div class="bottom-icon-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <p>Тільки живі приклади</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#register" class="cta-button">
+            ЗАРЕЄСТРУВАТИСЯ НА ВОРКШОП
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
+        <p class="footer-text">© 2024 AI Workshop. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function startCountdown() {
+            let totalSeconds = 24 * 60 * 60;
+
+            const savedEndTime = localStorage.getItem('countdownEndTime');
+            if (savedEndTime) {
+                const remaining = Math.floor((parseInt(savedEndTime) - Date.now()) / 1000);
+                if (remaining > 0) {
+                    totalSeconds = remaining;
+                } else {
+                    localStorage.setItem('countdownEndTime', Date.now() + (24 * 60 * 60 * 1000));
+                }
+            } else {
+                localStorage.setItem('countdownEndTime', Date.now() + (totalSeconds * 1000));
+            }
+
+            function updateTimer() {
+                const endTime = parseInt(localStorage.getItem('countdownEndTime'));
+                const remaining = Math.floor((endTime - Date.now()) / 1000);
+
+                if (remaining <= 0) {
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const hours = Math.floor(remaining / 3600);
+                const minutes = Math.floor((remaining % 3600) / 60);
+                const seconds = remaining % 60;
+
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', startCountdown);
+    </script>
 </body>
 </html>
