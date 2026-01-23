@@ -236,8 +236,8 @@
         }
 
         .tools-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -250,16 +250,15 @@
             text-align: left;
         }
 
-        .tool-card.wide {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .tool-card.full-width {
+            grid-column: span 2;
         }
 
         .tool-icons {
             display: flex;
             gap: 12px;
             margin-bottom: 16px;
+            flex-wrap: wrap;
         }
 
         .tool-icons img {
@@ -399,11 +398,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .results-grid {
+            .tools-grid {
                 grid-template-columns: 1fr;
             }
 
-            .tool-card.wide {
+            .results-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -478,46 +477,46 @@
                     <p class="case-study"><strong>Разберем кейс:</strong> Разработка маркетинговой стратегии для бизнеса недвижимости на Бали через глубинный анализ конкурентов и трендов</p>
                 </div>
 
-                <!-- Tool 3 & 4 -->
-                <div class="tool-card wide">
-                    <div>
-                        <div class="tool-icons">
-                            <img src="icons/tool-notebooklm.png" alt="NotebookLM">
-                            <img src="icons/tool-gemini.png" alt="Gemini">
-                        </div>
-                        <h3>NotebookLM + Gemini</h3>
-                        <div class="tool-subtitle">Второй мозг</div>
-                        <p>Система стоимостью $1500, которую вы создадите за 50 минут — ваш личный AI-ассистент для задач, заметок и поиска по всей накопленной информации</p>
+                <!-- Tool 3 -->
+                <div class="tool-card">
+                    <div class="tool-icons">
+                        <img src="icons/tool-notebooklm.png" alt="NotebookLM">
+                        <img src="icons/tool-gemini.png" alt="Gemini">
                     </div>
-                    <div>
-                        <div class="tool-icons">
-                            <img src="icons/tool-grok.png" alt="Grok">
-                            <img src="icons/tool-kling.png" alt="Kling">
-                            <img src="icons/tool-elevenlabs.png" alt="ElevenLabs">
-                        </div>
-                        <h3>Grok + Kling + ElevenLabs</h3>
-                        <p>Создание презентаций и визуального контента в реальном времени (картинки и видео)</p>
-                    </div>
+                    <h3>NotebookLM + Gemini</h3>
+                    <div class="tool-subtitle">Второй мозг</div>
+                    <p>Система стоимостью $1500, которую вы создадите за 50 минут — ваш личный AI-ассистент для задач, заметок и поиска по всей накопленной информации</p>
                 </div>
 
-                <!-- Tool 5 & 6 -->
-                <div class="tool-card wide">
-                    <div>
-                        <div class="tool-icons">
-                            <img src="icons/tool-cursor.png" alt="Cursor">
-                            <img src="icons/tool-gemini.png" alt="Gemini">
-                        </div>
-                        <h3>Cursor / Claude Code / Gemini</h3>
-                        <p>Покажем в эфире как за минуты создавать работающие приложения</p>
+                <!-- Tool 4 -->
+                <div class="tool-card">
+                    <div class="tool-icons">
+                        <img src="icons/tool-grok.png" alt="Grok">
+                        <img src="icons/tool-kling.png" alt="Kling">
+                        <img src="icons/tool-elevenlabs.png" alt="ElevenLabs">
                     </div>
-                    <div>
-                        <div class="tool-icons">
-                            <img src="icons/tool-ai.png" alt="AI">
-                            <img src="icons/tool-notion.png" alt="Notion">
-                        </div>
-                        <h3>AI-CRM интеграция</h3>
-                        <p>Автоматическая система, которая сама ставит задачи, анализирует диалоги и создает персонализированные аудитории в Facebook</p>
+                    <h3>Grok + Kling + ElevenLabs</h3>
+                    <p>Создание презентаций и визуального контента в реальном времени (картинки и видео)</p>
+                </div>
+
+                <!-- Tool 5 -->
+                <div class="tool-card">
+                    <div class="tool-icons">
+                        <img src="icons/tool-cursor.png" alt="Cursor">
+                        <img src="icons/tool-gemini.png" alt="Gemini">
                     </div>
+                    <h3>Cursor / Claude Code / Gemini</h3>
+                    <p>Покажем в эфире как за минуты создавать работающие приложения</p>
+                </div>
+
+                <!-- Tool 6 -->
+                <div class="tool-card">
+                    <div class="tool-icons">
+                        <img src="icons/tool-ai.png" alt="AI">
+                        <img src="icons/tool-notion.png" alt="Notion">
+                    </div>
+                    <h3>AI-CRM интеграция</h3>
+                    <p>Автоматическая система, которая сама ставит задачи, анализирует диалоги и создает персонализированные аудитории в Facebook</p>
                 </div>
 
                 <!-- Tool 7 -->
