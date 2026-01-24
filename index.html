@@ -20,12 +20,103 @@
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
         }
+
+        /* Floating Lights Background */
+        .floating-lights {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .light {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .light-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.6) 0%, transparent 70%);
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .light-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, transparent 70%);
+            top: 40%;
+            right: -5%;
+            animation-delay: -5s;
+        }
+
+        .light-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .light-4 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.5) 0%, transparent 70%);
+            top: 60%;
+            right: 30%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            75% {
+                transform: translate(20px, 10px) scale(1.05);
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         /* Header Section */
@@ -35,6 +126,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .badge {
@@ -153,6 +246,8 @@
             border-radius: 16px;
             padding: 30px;
             text-align: center;
+            position: relative;
+            z-index: 1;
             margin: 0 20px 40px;
             max-width: 600px;
             margin-left: auto;
@@ -396,6 +491,8 @@
         .footer {
             text-align: center;
             padding: 40px 0 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-text {
@@ -418,6 +515,14 @@
     </style>
 </head>
 <body>
+    <!-- Floating Lights Background -->
+    <div class="floating-lights">
+        <div class="light light-1"></div>
+        <div class="light light-2"></div>
+        <div class="light light-3"></div>
+        <div class="light light-4"></div>
+    </div>
+
     <!-- Header Section -->
     <header class="header">
         <div class="header-hero">
@@ -468,7 +573,7 @@
 
             <div class="tools-grid">
                 <!-- Tool 1 -->
-                <div class="tool-card">
+                <div class="tool-card animate-on-scroll">
                     <div class="tool-icons">
                         <img src="icons/tool-ai-browser.png" alt="ИИ-браузинг">
                     </div>
@@ -477,7 +582,7 @@
                 </div>
 
                 <!-- Tool 2 -->
-                <div class="tool-card">
+                <div class="tool-card animate-on-scroll">
                     <div class="tool-icons">
                         <img src="icons/tool-perplexity.png" alt="Perplexity">
                     </div>
@@ -487,7 +592,7 @@
                 </div>
 
                 <!-- Tool 3 -->
-                <div class="tool-card">
+                <div class="tool-card animate-on-scroll">
                     <div class="tool-icons">
                         <img src="icons/tool-notebooklm.png" alt="NotebookLM">
                         <img src="icons/tool-gemini.png" alt="Gemini">
@@ -498,7 +603,7 @@
                 </div>
 
                 <!-- Tool 4 -->
-                <div class="tool-card">
+                <div class="tool-card animate-on-scroll">
                     <div class="tool-icons">
                         <img src="icons/tool-grok.png" alt="Grok">
                         <img src="icons/tool-kling.png" alt="Kling">
@@ -509,7 +614,7 @@
                 </div>
 
                 <!-- Tool 5 -->
-                <div class="tool-card">
+                <div class="tool-card animate-on-scroll">
                     <div class="tool-icons">
                         <img src="icons/tool-cursor.png" alt="Cursor">
                         <img src="icons/tool-gemini.png" alt="Gemini">
@@ -520,7 +625,7 @@
                 </div>
 
                 <!-- Tool 6 -->
-                <div class="tool-card">
+                <div class="tool-card animate-on-scroll">
                     <div class="tool-icons">
                         <img src="icons/tool-ai.png" alt="AI">
                         <img src="icons/tool-notion.png" alt="Notion">
@@ -530,7 +635,7 @@
                 </div>
 
                 <!-- Tool 7 -->
-                <div class="tool-card">
+                <div class="tool-card animate-on-scroll">
                     <div class="tool-icons">
                         <img src="icons/tool-gemini.png" alt="Gemini">
                         <img src="icons/tool-lovable.png" alt="Lovable">
@@ -554,25 +659,25 @@
             </p>
 
             <div class="results-grid">
-                <div class="result-card">
+                <div class="result-card animate-on-scroll">
                     <div class="result-icon">
                         <img src="icons/result-layers.svg" alt="">
                     </div>
                     <p>Вы научитесь думать как архитектор систем, а не как обычный пользователь.</p>
                 </div>
-                <div class="result-card">
+                <div class="result-card animate-on-scroll">
                     <div class="result-icon">
                         <img src="icons/result-clock.svg" alt="">
                     </div>
                     <p>Поймете, как оптимизировать штат и ускорить работу команды.</p>
                 </div>
-                <div class="result-card">
+                <div class="result-card animate-on-scroll">
                     <div class="result-icon">
                         <img src="icons/result-check.svg" alt="">
                     </div>
                     <p>Узнаете, как делегировать до 80% рутины ИИ и освободить голову для стратегии.</p>
                 </div>
-                <div class="result-card">
+                <div class="result-card animate-on-scroll">
                     <div class="result-icon">
                         <img src="icons/result-rocket.svg" alt="">
                     </div>
@@ -594,19 +699,19 @@
             </p>
 
             <div class="team-grid">
-                <div class="team-card">
+                <div class="team-card animate-on-scroll">
                     <img src="images/team-vlad.png" alt="Влад Ясько" class="team-photo">
                     <h4>Влад Ясько</h4>
                     <p class="role">Креатор и Продюсер</p>
                     <p>Покажет, как запускать продукты за 1 день и создавать личный «контент-завод», работающий на вас круглосуточно.</p>
                 </div>
-                <div class="team-card">
+                <div class="team-card animate-on-scroll">
                     <img src="images/team-anton.png" alt="Антон Прилипкин" class="team-photo">
                     <h4>Антон Прилипкин</h4>
                     <p class="role">Специалист по глубокой автоматизации</p>
                     <p>Эксперт по эффективности. Расскажет, как внедрить «Второй мозг», чтобы перестать тонуть в информационном хаосе.</p>
                 </div>
-                <div class="team-card">
+                <div class="team-card animate-on-scroll">
                     <img src="images/team-kostya.png" alt="Костя Картошкін" class="team-photo">
                     <h4>Костя Картошкін</h4>
                     <p class="role">Предприниматель</p>
@@ -661,6 +766,23 @@
         }
 
         document.addEventListener('DOMContentLoaded', startCountdown);
+
+        // Scroll Animation
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 50) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
     </script>
 </body>
 </html>
